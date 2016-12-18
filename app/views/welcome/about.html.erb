@@ -1,9 +1,14 @@
+<style>
+  body {
+    background: <%= @color %>;
+  }
+</style>
 
 <%= link_to "Blue", about_path(color: "blue"), class: "btn btn-primary",  id: "about" %>
 
 <h1>About Me</h1>
 <p>Lots of interesting stuffs.</p>
 
-<p>My favorite color is <%= @size %> <%= @color %></p>
+<p>My favorite color is <%= @color %></p>
 
 
