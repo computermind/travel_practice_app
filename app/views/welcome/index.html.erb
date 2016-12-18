@@ -1,3 +1,5 @@
+
+
 <div>
     <ul>
     <% @countries.each do |country| %>
@@ -7,13 +9,13 @@
 </div>
 
 <div class="container">
+    <% @liberia.each do |tourist_attraction| %>
     <div class="row">
         <div class="col-md-3">
-            <div class="well">
-                <% @liberia.each do |tourist_attraction| %>
-                    <%= image_tag tourist_attraction, alt: "tourist_attraction", id: "liberia", class: "country" %>
-                <% end %>
+            <div class="well well-lg">
+                <%= image_tag tourist_attraction, alt: "tourist_attraction", id: "liberia", class: "country" %>
             </div>
         </div>
     </div>
+    <% end %>
 </div>
