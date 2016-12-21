@@ -4,8 +4,11 @@
   </p>
 <% end %>
 
+
+
 <h1><%= "#{@destination.city}, #{@destination.country}" %></h1>
 <h2>Population <%= @destination.population %></h2>
+<%= image_tag @destination.avatar.url %>
 <p> <%= @destination.description %></p>
 
 <div class="btn-group">
