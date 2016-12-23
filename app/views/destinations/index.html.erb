@@ -15,7 +15,7 @@
         <p><%= "#{destination.city}, #{destination.country}" %></p>
         <p>Population: <%= destination.population %></p>
         <% if destination.avatar_file_name != nil %>
-          <%= image_tag destination.avatar.url(:medium), class: "img-responsive" %>
+          <%= image_tag destination.avatar.url(:medium ), class: "img-responsive" %>
         <% end %>
         <p><%= destination.description %></p>
         <p>
@@ -35,13 +35,3 @@
   <% end %>
 </ul>
 
-<!-- div for google map -->
-<div id="map-container">
-  <div id="map-canvas"></div>
-</div>
-
-<%= javascript_tag do %>
-    latitude = '<%= j @destination.latitude.to_s %>';
-    longitude = '<%= j @destination.longitude.to_s %>';
-    address = '<%= j @destination.address %>';
-<% end %>

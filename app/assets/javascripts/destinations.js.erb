@@ -1,0 +1,43 @@
+# Place all the behaviors and hooks related to the matching controller here.
+# All this logic will automatically be available in application.js.
+# You can use CoffeeScript in this file: http://coffeescript.org/
+
+ 
+ $(document).ready(function (){
+
+  function initialize() {
+  	var myCoords = new google.maps.LatLng(33.785030,-84.421596)
+
+    var mapOptions = {
+    center: myCoords,
+    zoom: 15,
+    scrollwheel: false
+    };
+      
+    var map = new google.maps.Map(document.getElementById('map-canvas'),
+              mapOptions);
+
+    var image = "<%= asset_path 'flag_of_liberia.jpg' %>"
+  	var marker = new google.maps.Marker({
+		  position: myCoords,
+		  map: map,
+		  title: 'Flag Liberia',
+		  icon: image,
+		  animation: google.maps.Animation.DROP
+		});
+
+		 var contentString = '<h2>Liberian Flag</h2><p>Where all your dreams come true.</p>'
+		 ;
+
+		 var infowindow = new google.maps.InfoWindow({
+		   content: contentString
+		 });
+
+		 google.maps.event.addListener(marker, 'click', function() {
+		    infowindow.open(map,marker);
+		 });
+
+  }
+    
+  google.maps.event.addDomListener(window, 'load', initialize);
+});
