@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161220235635) do
+ActiveRecord::Schema.define(version: 20161223071714) do
 
   create_table "destinations", force: :cascade do |t|
     t.string   "city"
@@ -24,6 +24,9 @@ ActiveRecord::Schema.define(version: 20161220235635) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.float    "longitude"
+    t.float    "latitude"
+    t.string   "address"
   end
 
 end

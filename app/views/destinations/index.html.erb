@@ -34,3 +34,14 @@
     <li><%= link_to c.country, destinations_path(country: c.country) %></li>
   <% end %>
 </ul>
+
+<!-- div for google map -->
+<div id="map-container">
+  <div id="map-canvas"></div>
+</div>
+
+<%= javascript_tag do %>
+    latitude = '<%= j @destination.latitude.to_s %>';
+    longitude = '<%= j @destination.longitude.to_s %>';
+    address = '<%= j @destination.address %>';
+<% end %>
